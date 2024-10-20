@@ -17,11 +17,59 @@ class ApplicationTest extends NsTest {
     }
 
     @Test
-    void 예외_테스트() {
+    void 예외_테스트_1() {
         assertSimpleTest(() ->
             assertThatThrownBy(() -> runException("-1,2,3"))
                 .isInstanceOf(IllegalArgumentException.class)
         );
+    }
+
+    @Test
+    void 예외_테스트_2(){
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("0,0,0;;"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
+    @Test
+    void 예외_테스트_3(){
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException("관계없는 문자열"))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
+    @Test
+    void 예제_테스트_1(){
+        assertSimpleTest(() -> {
+            run("1,2:3");
+            assertThat(output()).contains("결과 : 6");
+        });
+    }
+
+    @Test
+    void 예제_테스트_4(){
+        assertSimpleTest(() -> {
+            run("0,0,0,0,0,0,0,0,0:0.00:0");
+            assertThat(output()).contains("결과 : 0");
+        });
+    }
+
+    @Test
+    void 예제_테스트_2(){
+        assertSimpleTest(() -> {
+            run("");
+            assertThat(output()).contains("결과 : 0");
+        });
+    }
+
+    @Test
+    void 예제_테스트_3(){
+        assertSimpleTest(() -> {
+            run("1,2,3");
+            assertThat(output()).contains("결과 : 6");
+        });
     }
 
     @Override
