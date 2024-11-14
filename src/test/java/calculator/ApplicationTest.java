@@ -35,6 +35,15 @@ class ApplicationTest extends NsTest {
         );
     }
 
+    @ParameterizedTest
+    @ValueSource(strings = {"-1", "-1:-5,7", "//;\\n1:2:-3,4|5",})
+    void 구분후_음수_예외_테스트(String input) {
+        assertSimpleTest(() ->
+                assertThatThrownBy(() -> runException(input))
+                        .isInstanceOf(IllegalArgumentException.class)
+        );
+    }
+
     @Override
     public void runMain() {
         Application.main(new String[]{});
