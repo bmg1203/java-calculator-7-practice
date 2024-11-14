@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class Split {
 
-    private static final String CUSTOM_EXTRACT = ".*?//(.*?)\\\n.*";
+    private static final String CUSTOM_EXTRACT = "//(.*?)\\\n";
 
     public static List<String> customSplit(String input) {
         input = input.replaceAll(" ", "");
@@ -26,5 +26,9 @@ public class Split {
     private static void splitNoGap(String input, List<String> customSpearator) {
         String[] strings = input.split("");
         Collections.addAll(customSpearator, strings);
+    }
+
+    public static String removeCustom(String input) {
+        return input.replaceAll(CUSTOM_EXTRACT, "");
     }
 }
