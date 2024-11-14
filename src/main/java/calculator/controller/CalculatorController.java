@@ -5,6 +5,7 @@ import calculator.utils.Split;
 import calculator.validator.NumberValidator;
 import calculator.view.InputView;
 import calculator.view.OutputView;
+import camp.nextstep.edu.missionutils.Console;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +35,7 @@ public class CalculatorController {
 
     private void start() {
         input = inputView.inputString();
+        Console.close();
 
         if (input.contains("//") && input.contains("\\\n")) {
             customSeparator(input);
