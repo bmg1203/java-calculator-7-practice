@@ -18,14 +18,14 @@ public class Split {
         List<String> customSpearator = new ArrayList<>();
 
         while (matcher.find()) {
-            splitNoGap(matcher.group(2).trim(), customSpearator);
+            splitNoGap(matcher.group(1).trim(), customSpearator);
         }
         return customSpearator;
     }
 
     private static void splitNoGap(String input, List<String> customSpearator) {
-        String[] strings = input.split("");
-        Collections.addAll(customSpearator, strings);
+        List<String> strings = List.of(input.split(""));
+        customSpearator.addAll(strings);
     }
 
     public static String removeCustom(String input) {
