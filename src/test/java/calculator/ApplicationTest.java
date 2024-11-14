@@ -44,6 +44,22 @@ class ApplicationTest extends NsTest {
         );
     }
 
+    @Test
+    void 공란_입력_테스트() {
+        assertSimpleTest(() -> {
+            run("");
+            assertThat(output()).contains("결과 : 0");
+        });
+    }
+
+    @Test
+    void 공란_입력_테스트2() {
+        assertSimpleTest(() -> {
+            run(" ");
+            assertThat(output()).contains("결과 : 0");
+        });
+    }
+
     @Override
     public void runMain() {
         Application.main(new String[]{});
