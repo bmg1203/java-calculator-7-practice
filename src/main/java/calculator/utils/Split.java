@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 
 public class Split {
 
-    private static final String CUSTOM_EXTRACT = "//(.*?)\\\n";
+    private static final String CUSTOM_EXTRACT = "//(.*?)\\\\n";
 
     public static List<String> customSplit(String input) {
         input = input.replaceAll(" ", "");
