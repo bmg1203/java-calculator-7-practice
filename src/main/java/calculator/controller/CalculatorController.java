@@ -23,7 +23,7 @@ public class CalculatorController {
 
     public void run() {
         start();
-        if (input.isEmpty()) {
+        if (input.isEmpty() || input.equals(" ")) {
             printResult(0);
             return;
         }
