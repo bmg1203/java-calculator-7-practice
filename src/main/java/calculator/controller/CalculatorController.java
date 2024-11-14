@@ -37,7 +37,7 @@ public class CalculatorController {
         input = inputView.inputString();
         Console.close();
 
-        if (input.contains("//") && input.contains("\\\n")) {
+        if (input.contains("//") && input.contains("\\n")) {
             customSeparator(input);
         }
         //기본 구분자 추가
