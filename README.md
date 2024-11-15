@@ -1,5 +1,6 @@
 문자열 덧셈 계산기
 ====
+[요구사항 명세서](https://drive.google.com/file/d/1aow96VTo9p9PpyA6JyjOCLJP4YR6eEUt/view?usp=sharing)
 
 개요
 ----
